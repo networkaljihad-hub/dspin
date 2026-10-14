@@ -1274,7 +1274,7 @@ button.admin-nav-item {
         <!-- Warning if not logged in / not admin -->
         <section class="panel" id="adminDenied" hidden>
           <div class="panel-head"><h3>Access restricted</h3></div>
-          <p class="panel-note">Not signed in with an admin account in this browser. <a href="login.html" class="auth-link">Login as admin first</a>, then reopen this page.</p>
+          <p class="panel-note">Not signed in with an admin account in this browser. <a href="../index.html" class="auth-link">Login as admin first</a>, then reopen this page.</p>
         </section>
 
         <section id="adminMain" hidden>
@@ -1651,7 +1651,7 @@ window.AdminStore = (function () {
   function boot() {
     window.supabase.auth.getSession().then(function (resp) {
       if (resp.error || !resp.data.session) {
-        window.location.href = "login.html";
+        window.location.href = "../index.html";
         return;
       }
       MY_ID = resp.data.session.user.id;
@@ -1691,7 +1691,7 @@ window.AdminStore = (function () {
     if (!btn) return;
     btn.addEventListener("click", function () {
       window.supabase.auth.signOut().then(function () {
-        window.location.href = "login.html";
+        window.location.href = "../index.html";
       });
     });
   }
