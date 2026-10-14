@@ -8,22 +8,22 @@
   <meta name="robots" content="noindex, follow" />
   <meta name="author" content="Daily Spin" />
   <meta name="theme-color" content="#0E2E5C" />
-  <link rel="canonical" href="https://networkaljihad-hub.github.io/dspin/admin/index.html" />
+  <link rel="canonical" href="https://networkaljihad-hub.github.io/index.html" />
   <link rel="icon" type="image/png" href="assets/Dspin-logo.png" />
   <link rel="apple-touch-icon" href="assets/Dspin-logo.png" />
   <meta property="og:site_name" content="Daily Spin" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Admin Console &mdash; Daily Spin" />
   <meta property="og:description" content="Daily Spin admin console - withdrawals, users and payouts." />
-  <meta property="og:url" content="https://networkaljihad-hub.github.io/dspin/admin/index.html" />
-  <meta property="og:image" content="https://networkaljihad-hub.github.io/dspin/og-image.png" />
+  <meta property="og:url" content="https://networkaljihad-hub.github.io/index.html" />
+  <meta property="og:image" content="https://networkaljihad-hub.github.io/og-image.png" />
   <meta property="og:image:width" content="512" />
   <meta property="og:image:height" content="512" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Admin Console &mdash; Daily Spin" />
   <meta name="twitter:description" content="Daily Spin admin console - withdrawals, users and payouts." />
-  <meta name="twitter:image" content="https://networkaljihad-hub.github.io/dspin/og-image.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Daily Spin","url":"https://networkaljihad-hub.github.io/dspin/"}</script>
+  <meta name="twitter:image" content="https://networkaljihad-hub.github.io/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Daily Spin","url":"https://networkaljihad-hub.github.io/"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -1254,7 +1254,7 @@ button.admin-nav-item {
   <div class="app">
     <!-- ===== ADMIN TOPBAR ===== -->
     <header class="admin-topbar">
-      <a href="index.html" class="brand">
+      <a href="https://networkaljihad-hub.github.io/index.html" class="brand">
         <span class="brand-text">Daily <span class="accent">Spin</span> <small class="admin-badge">ADMIN</small></span>
       </a>
       <nav class="admin-nav" id="adminNav">
@@ -1274,7 +1274,7 @@ button.admin-nav-item {
         <!-- Warning if not logged in / not admin -->
         <section class="panel" id="adminDenied" hidden>
           <div class="panel-head"><h3>Access restricted</h3></div>
-          <p class="panel-note">Not signed in with an admin account in this browser. <a href="../index.html" class="auth-link">Login as admin first</a>, then reopen this page.</p>
+          <p class="panel-note">Not signed in with an admin account in this browser. <a href="https://networkaljihad-hub.github.io/index.html" class="auth-link">Login as admin first</a>, then reopen this page.</p>
         </section>
 
         <section id="adminMain" hidden>
@@ -1398,7 +1398,7 @@ button.admin-nav-item {
   /* Real login / reset links always point here (never to localhost).
      NOTE: this host must be in Supabase -> Authentication -> URL Configuration
      -> "Redirect URLs", otherwise the reset link falls back to Site URL. */
-  window.APP_BASE = "https://networkaljihad-hub.github.io/dspin";
+  window.APP_BASE = "https://networkaljihad-hub.github.io";
 
   window.supabase = supabase.createClient(window.SUPA_URL, window.SUPA_ANON, {
     auth: {
@@ -1651,7 +1651,7 @@ window.AdminStore = (function () {
   function boot() {
     window.supabase.auth.getSession().then(function (resp) {
       if (resp.error || !resp.data.session) {
-        window.location.href = "../index.html";
+        window.location.href = "https://networkaljihad-hub.github.io/index.html";
         return;
       }
       MY_ID = resp.data.session.user.id;
@@ -1691,7 +1691,7 @@ window.AdminStore = (function () {
     if (!btn) return;
     btn.addEventListener("click", function () {
       window.supabase.auth.signOut().then(function () {
-        window.location.href = "../index.html";
+        window.location.href = "https://networkaljihad-hub.github.io/index.html";
       });
     });
   }
